@@ -1,0 +1,73 @@
+{
+  "accounts": [{
+    "links": {
+      "balances": {
+        "href": "/v3/accounts/37608c1d-4d6a-40a2-850c-2462f2e26e80/balances?currency=RON"
+      },
+      "transactions": {
+        "href": "/v2/accounts/37608c1d-4d6a-40a2-850c-2462f2e26e80/transactions?currency=RON"
+      }
+    },
+    "resourceId": "37608c1d-4d6a-40a2-850c-2462f2e26e80",
+    "iban": "RO44INGB0000999908767270",
+    "maskedPan": null,
+    "name": "Popescu Corina",
+    "currency": "RON",
+    "product": "Cont Curent",
+    "_links": {
+      "balances": {
+        "href": "/v3/accounts/37608c1d-4d6a-40a2-850c-2462f2e26e80/balances?currency=RON"
+      },
+      "transactions": {
+        "href": "/v2/accounts/37608c1d-4d6a-40a2-850c-2462f2e26e80/transactions?currency=RON"
+      }
+    }
+  }, {
+    "links": {
+      "balances": {
+        "href": "/v3/accounts/68ef156b-2f9f-4c50-9a55-d74d8139f542/balances?currency=RON"
+      },
+      "transactions": {
+        "href": "/v2/accounts/68ef156b-2f9f-4c50-9a55-d74d8139f542/transactions?currency=RON"
+      }
+    },
+    "resourceId": "68ef156b-2f9f-4c50-9a55-d74d8139f542",
+    "iban": "RO20INGB0000999904952401",
+    "maskedPan": null,
+    "name": "Ilie Bogdan",
+    "currency": "RON",
+    "product": "Cont Curent",
+    "_links": {
+      "balances": {
+        "href": "/v3/accounts/68ef156b-2f9f-4c50-9a55-d74d8139f542/balances?currency=RON"
+      },
+      "transactions": {
+        "href": "/v2/accounts/68ef156b-2f9f-4c50-9a55-d74d8139f542/transactions?currency=RON"
+      }
+    }
+  }, {
+    "links": {
+      "balances": {
+        "href": "/v3/accounts/1e19978f-b07c-4018-960f-0150bcefd317/balances?currency=RON"
+      },
+      "transactions": {
+        "href": "/v1/card-accounts/1e19978f-b07c-4018-960f-0150bcefd317/transactions?currency=RON"
+      }
+    },
+    "resourceId": "1e19978f-b07c-4018-960f-0150bcefd317",
+    "iban": "RO44INGB0000999908767270",
+    "maskedPan": null,
+    "name": "Popescu Corina",
+    "currency": "RON",
+    "product": "Card de Credit",
+    "_links": {
+      "balances": {
+        "href": "/v3/accounts/1e19978f-b07c-4018-960f-0150bcefd317/balances?currency=RON"
+      },
+      "transactions": {
+        "href": "/v1/card-accounts/1e19978f-b07c-4018-960f-0150bcefd317/transactions?currency=RON"
+      }
+    }
+  }
+  ]
+}

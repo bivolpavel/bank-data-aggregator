@@ -1,0 +1,17 @@
+{
+  "account": {
+    "iban": "RO44INGB0000999908767270",
+    "maskedPan": null,
+    "currency": "RON"
+  },
+  "balances": [{
+    "balanceType": "expected",
+    "balanceAmount": {
+      "currency": "EUR",
+      "amount": 1073.86
+    },
+    "lastChangeDateTime": "2020-01-06T09:16:54.991Z",
+    "referenceDate": null
+  }
+  ]
+}

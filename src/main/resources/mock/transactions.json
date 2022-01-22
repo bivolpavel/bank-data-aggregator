@@ -1,0 +1,161 @@
+{
+  "account": {
+    "iban": "NL69INGB0123456789",
+    "currency": "EUR"
+  },
+  "transactions": {
+    "booked": [
+      {
+        "transactionId": "trx123456789",
+        "endToEndId": "EndToEndID1234567890",
+        "bookingDate": "2021-06-15",
+        "valueDate": "2021-06-15",
+        "executionDateTime": "2021-06-15T09:16:54.991Z",
+        "transactionAmount": {
+          "currency": "EUR",
+          "amount": -100.12
+        },
+        "debtorName": "Debtor Name",
+        "debtorAccount": {
+          "iban": "NL69INGB0123456789",
+          "bban": 123456789,
+          "bic": "INGBNL2A"
+        },
+        "transactionType": "Sepa Credit Transfer",
+        "remittanceInformationUnstructured": "Unstructured remittance information example",
+        "remittanceInformationStructured": {
+          "type": "SCOR",
+          "issuer": "ISO",
+          "reference": "RF18539007547034"
+        }
+      },
+      {
+        "transactionId": "trx987654321",
+        "endToEndId": "EndToEndID1234567890",
+        "bookingDate": "2021-05-06",
+        "valueDate": "2021-05-06",
+        "executionDateTime": "2021-05-06T09:16:54.991Z",
+        "transactionAmount": {
+          "currency": "EUR",
+          "amount": -90
+        },
+        "creditorName": "Popescu Ion",
+        "creditorAccount": {
+          "iban": "NL69INGB0123456789",
+          "bban": 123456789,
+          "bic": "INGBNL2A"
+        },
+        "transactionType": "Sepa Credit Transfer",
+        "remittanceInformationUnstructured": "Unstructured remittance information example",
+        "remittanceInformationStructured": {
+          "type": "SCOR",
+          "issuer": "ISO",
+          "reference": "RF18539007547034"
+        }
+      }
+    ],
+    "pending": [
+      {
+        "transactionId": "trx987654321",
+        "endToEndId": "EndToEndID1234567890",
+        "bookingDate": "2021-04-06",
+        "valueDate": "2021-04-06",
+        "executionDateTime": "2021-04-06T09:16:54.991Z",
+        "transactionAmount": {
+          "currency": "EUR",
+          "amount": -57.12
+        },
+        "creditorName": "Creditor Name",
+        "creditorAccount": {
+          "iban": "NL69INGB0123456789",
+          "bban": 123456789,
+          "bic": "INGBNL2A"
+        },
+        "transactionType": "Sepa Credit Transfer",
+        "remittanceInformationUnstructured": "Unstructured remittance information example",
+        "remittanceInformationStructured": {
+          "type": "SCOR",
+          "issuer": "ISO",
+          "reference": "RF18539007547034"
+        }
+      },
+      {
+        "transactionId": "trx987654322",
+        "endToEndId": "EndToEndID1234567890",
+        "bookingDate": "2021-03-21",
+        "valueDate": "2021-03-21",
+        "executionDateTime": "2021-03-21T09:16:54.991Z",
+        "transactionAmount": {
+          "currency": "EUR",
+          "amount": -250.12
+        },
+        "creditorName": "Popescu Corina",
+        "creditorAccount": {
+          "iban": "RO44INGB0000999908767270",
+          "bban": 123456789,
+          "bic": "INGBNL2A"
+        },
+        "transactionType": "Sepa Credit Transfer",
+        "remittanceInformationUnstructured": "Unstructured remittance information example",
+        "remittanceInformationStructured": {
+          "type": "SCOR",
+          "issuer": "ISO",
+          "reference": "RF18539007547034"
+        }
+      },
+      {
+        "transactionId": "trx987654323",
+        "endToEndId": "EndToEndID1234567890",
+        "bookingDate": "2021-02-15",
+        "valueDate": "2021-02-15",
+        "executionDateTime": "2021-02-15T09:16:54.991Z",
+        "transactionAmount": {
+          "currency": "EUR",
+          "amount": -78.12
+        },
+        "creditorName": "Popescu Corina",
+        "creditorAccount": {
+          "iban": "RO44INGB0000999908767270",
+          "bban": 123456789,
+          "bic": "INGBNL2A"
+        },
+        "transactionType": "Sepa Credit Transfer",
+        "remittanceInformationUnstructured": "Unstructured remittance information example",
+        "remittanceInformationStructured": {
+          "type": "SCOR",
+          "issuer": "ISO",
+          "reference": "RF18539007547034"
+        }
+      },
+      {
+        "transactionId": "trx987654324",
+        "endToEndId": "EndToEndID1234567890",
+        "bookingDate": "2021-01-21",
+        "valueDate": "2021-01-21",
+        "executionDateTime": "2021-01-21T09:16:54.991Z",
+        "transactionAmount": {
+          "currency": "EUR",
+          "amount": -356.12
+        },
+        "creditorName": "Popescu Corina",
+        "creditorAccount": {
+          "iban": "RO44INGB0000999908767270",
+          "bban": 123456789,
+          "bic": "INGBNL2A"
+        },
+        "transactionType": "Sepa Credit Transfer",
+        "remittanceInformationUnstructured": "Unstructured remittance information example",
+        "remittanceInformationStructured": {
+          "type": "SCOR",
+          "issuer": "ISO",
+          "reference": "RF18539007547034"
+        }
+      }
+    ],
+    "_links": {
+      "next": {
+        "href": "/v2/accounts/7de0041d-4f25-4b6c-a885-0bbeb1eab220/transactions?next=CQR23TABC"
+      }
+    }
+  }
+}

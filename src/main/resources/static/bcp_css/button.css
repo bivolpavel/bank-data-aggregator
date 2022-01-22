@@ -1,0 +1,15 @@
+/*!
+ * Spring MVC Project button styles
+ * Copyright 2021 Bivol Pavel
+ * Licensed under the MIT License (http://www.opensource.org/licenses/mit-license.php)
+ *
+ * This file contains styles for buttons.
+ */
+
+.linkButton { 
+     background: none;
+     border: none;
+     color: #4582ec;
+     text-decoration: underline;
+     cursor: pointer; 
+}
