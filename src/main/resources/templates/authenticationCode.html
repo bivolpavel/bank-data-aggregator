@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:include="fragments/header :: header" />
+<body class="">
+<div class="wrapper">
+    <div class="content" style="text-align: -webkit-center;">
+        <div class="col-md-4" style="margin-top: 100px;">
+            <div class="card card-user">
+                <div class="card-header">
+                    <img class="mb-4" src="/static/images/account-aggregator-icon.png" width="80" height="80">
+                    <h5 class="card-title">Account Aggregator</h5>
+                </div>
+                <div class="card-body" style="text-align: left;">
+                    <form th:action="@{/verify(username=${username})}" method="post" class="form-signin">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="code">Authentication Code</label>
+                                    <input type="text" name="code" id="code" class="form-control" placeholder="Code" >
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="update ml-auto mr-auto">
+                                <button type="submit" class="btn btn-primary btn-round">Sign In</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer>
+    <div th:include="fragments/scripts :: general" />
+</footer>
+</body>
+</html>

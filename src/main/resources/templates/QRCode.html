@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:include="fragments/header :: header" />
+<body class="">
+<div class="wrapper">
+    <div class="content" style="text-align: -webkit-center;">
+        <div class="col-md-4" style="margin-top: 100px;">
+            <div class="card card-user">
+                <div class="card-header">
+                    <img class="mb-4" src="/static/images/account-aggregator-icon.png" width="80" height="80">
+                    <h5 class="card-title">Account Aggregator</h5>
+                    <p>Scan the QRCode using authenticator app</p>
+                </div>
+                <div class="card-body">
+                    <form class="form-signin">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <img th:src="@{${qrcode}}" width="300"/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="update ml-auto mr-auto">
+                                <a class="btn btn-primary btn-round" th:href="@{/code(username=${username})}" role="button">Done</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer>
+    <div th:include="fragments/scripts :: general" />
+</footer>
+</body>
+</html>

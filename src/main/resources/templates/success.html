@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head th:include="fragments/header :: header" />
+<body>
+<div class="wrapper ">
+    <div class="header" th:include="fragments/menu :: menu" />
+
+    <div class="main-panel" style="height: 100vh;">
+        <!-- Navbar -->
+        <div th:include="fragments/nav :: nav" />
+        <!-- End Navbar -->
+        <div class="content">
+            <div class="row">
+                <div class="col-md-12">
+
+                    <div class="card text-center">
+                        <div class="card-header">
+                            <h3 class="card-title">Success</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="text-center">
+                                <img src="/static/images/success.png" width="100" height="100" style="margin-bottom: 20px;"><br>
+                                <h5>This operation was performed successfully</h5>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div th:include="fragments/footer :: footer" />
+    </div>
+</div>
+<footer>
+    <div th:include="fragments/scripts :: general" />
+</footer>
+</body>
+</html>

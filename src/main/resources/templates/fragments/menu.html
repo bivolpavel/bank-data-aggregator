@@ -1,0 +1,49 @@
+<header th:fragment="menu">
+
+    <div class="sidebar" data-color="white" data-active-color="danger">
+        <div class="logo">
+            <a href="/" class="simple-text logo-mini"></a>
+            <a href="/" class="simple-text logo-normal">
+                <img class="mb-4" src="/static/images/account-aggregator-icon.png" width="80" height="80">
+            </a>
+        </div>
+        <div class="sidebar-wrapper">
+            <ul class="nav">
+                <li class="active ">
+                    <a href="/">
+                        <i class="nc-icon nc-bank"></i>
+                        <p>Home</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="/accounts">
+                        <i class="nc-icon nc-diamond"></i>
+                        <p>Accounts</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="/transactions">
+                        <i class="nc-icon nc-tile-56"></i>
+                        <p>Transactions</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="/add-bank-account-page">
+                        <i class="nc-icon nc-bank"></i>
+                        <p>Add bank account</p>
+                    </a>
+                </li>
+
+                <li style="position: absolute; bottom: 50px; width: 100%;">
+                    <a href="/logout">
+                        <i class="nc-icon nc-pin-3"></i>
+                        <p>Sign out</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</header>
+
+
+

@@ -1,0 +1,154 @@
+
+
+
+<!doctype html>
+<html lang="en">
+<head th:include="fragments/header :: header" />
+<body>
+<div class="wrapper ">
+    <div class="header" th:include="fragments/menu :: menu" />
+
+    <div class="main-panel">
+        <!-- Navbar -->
+        <div th:include="fragments/nav :: nav" />
+        <!-- End Navbar -->
+        <div class="content">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 class="description">Your content here</h3>
+
+                    <div th:if="${allAccountsTransactions == null}">
+                        <header class="page-header">
+                            <h2>You have no transactions yet!</h2>
+                        </header>
+                    </div>
+
+
+                    <div th:if="${allAccountsTransactions != null}">
+
+                        <div class="col-md-12">
+                            <h1>Account details</h1>
+                            <table class="table" >
+                                <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Type</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td><span  th:text="${accountTransactions?.ownerName}">Name</span></td>
+                                    <td><span  th:text="${accountTransactions?.product}">Type</span></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+
+                        <div th:each="accountTransactions : ${allAccountsTransactions?.accountTransactions}">
+                            <div th:if="${not #lists.isEmpty(accountTransactions?.pendingTransactions)}">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4 class="card-title"> Pending transazctions</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="table-responsive">
+                                            <table class="table">
+                                                <thead class=" text-primary">
+                                                <tr>
+                                                    <th>Creditor Name</th>
+                                                    <th>Iban</th>
+                                                    <th>Date</th>
+                                                    <th>Amount</th>
+                                                    <th>Currencies</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr th:each="pendingTransaction : ${accountTransactions?.pendingTransactions}">
+                                                    <td><span th:remove="tag" th:text="${pendingTransaction?.creditorName}">Creditor Name</span></td>
+                                                    <td><span th:remove="tag" th:text="${pendingTransaction?.creditorAccount?.iban}">Iban</span></td>
+                                                    <td><span th:remove="tag" th:text="${pendingTransaction?.executionDateTime}">Date</span></td>
+                                                    <td><span th:remove="tag" th:text="${pendingTransaction?.transactionAmount?.amount}">Amount</span></td>
+                                                    <td><span th:remove="tag" th:text="${pendingTransaction?.transactionAmount?.currency}">Currency</span></td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div th:if="${not #lists.isEmpty(accountTransactions?.bookedTransactions)}">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4 class="card-title"> Booked transactions</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="table-responsive">
+                                            <table class="table">
+                                                <thead class=" text-primary">
+                                                <tr>
+                                                    <th>Creditor Name</th>
+                                                    <th>Iban</th>
+                                                    <th>Date</th>
+                                                    <th>Amount</th>
+                                                    <th>Currencies</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr th:each="pendingTransaction : ${accountTransactions?.pendingTransactions}">
+                                                    <td><span th:remove="tag" th:text="${pendingTransaction?.creditorName}">Creditor Name</span></td>
+                                                    <td><span th:remove="tag" th:text="${pendingTransaction?.creditorAccount?.iban}">Iban</span></td>
+                                                    <td><span th:remove="tag" th:text="${pendingTransaction?.executionDateTime}">Date</span></td>
+                                                    <td><span th:remove="tag" th:text="${pendingTransaction?.transactionAmount?.amount}">Amount</span></td>
+                                                    <td><span th:remove="tag" th:text="${pendingTransaction?.transactionAmount?.currency}">Currency</span></td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div th:if="${not #lists.isEmpty(accountTransactions?.infoTransactions)}">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4 class="card-title"> Info transactions</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="table-responsive">
+                                            <table class="table">
+                                                <thead class=" text-primary">
+                                                <tr>
+                                                    <th>Creditor Name</th>
+                                                    <th>Iban</th>
+                                                    <th>Date</th>
+                                                    <th>Amount</th>
+                                                    <th>Currencies</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr th:each="pendingTransaction : ${accountTransactions?.pendingTransactions}">
+                                                    <td><span th:remove="tag" th:text="${pendingTransaction?.creditorName}">Creditor Name</span></td>
+                                                    <td><span th:remove="tag" th:text="${pendingTransaction?.creditorAccount?.iban}">Iban</span></td>
+                                                    <td><span th:remove="tag" th:text="${pendingTransaction?.executionDateTime}">Date</span></td>
+                                                    <td><span th:remove="tag" th:text="${pendingTransaction?.transactionAmount?.amount}">Amount</span></td>
+                                                    <td><span th:remove="tag" th:text="${pendingTransaction?.transactionAmount?.currency}">Currency</span></td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div th:include="fragments/footer :: footer" />
+    </div>
+</div>
+<footer>
+    <div th:include="fragments/scripts :: general" />
+</footer>
+</body>
+</html>

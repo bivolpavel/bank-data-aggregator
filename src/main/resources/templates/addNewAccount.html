@@ -1,0 +1,59 @@
+
+
+
+<!doctype html>
+<html lang="en">
+<head th:include="fragments/header :: header" />
+<body>
+<div class="wrapper ">
+    <div class="header" th:include="fragments/menu :: menu" />
+
+    <div class="main-panel" style="height: 100vh;">
+        <!-- Navbar -->
+        <div th:include="fragments/nav :: nav" />
+        <!-- End Navbar -->
+        <div class="content">
+            <div class="row">
+                <div class="col-md-12">
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title"> Adaugare cont  bancar</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead class=" text-primary">
+                                    <tbody>
+                                    <tr>
+                                        <td valign="middle"><img src="/static/images/ing-bank-logo.png" width="80" height="80"></td>
+                                        <td valign="middle" align="left"><span style="font-size:medium">ING Romania</span></td>
+                                        <td valign="middle" align="right"><a class="btn btn-md btn-primary btn-block" th:href="@{/oauth/initiate-authorization}" role="button">Add account</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td valign="middle"><img src="/static/images/bt-bank-logo.png" width="80" height="80"></td>
+                                        <td valign="middle" align="left"><span style="font-size:medium;">Banca Transilvania</span></td>
+                                        <td valign="middle" align="right"><a class="btn btn-md btn-primary btn-block" th:href="@{/oauth/initiate-authorization}" role="button">Add account</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td valign="middle"><img src="/static/images/brd-bank-logo.png" width="80" height="80"></td>
+                                        <td valign="middle" align="left"><span style="font-size:medium;">BRD – Groupe Société Générale</span></td>
+                                        <td valign="middle" align="right"><a class="btn btn-md btn-primary btn-block" th:href="@{/oauth/initiate-authorization}" role="button">Add account</a></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div th:include="fragments/footer :: footer" />
+    </div>
+</div>
+<footer>
+    <div th:include="fragments/scripts :: general" />
+</footer>
+</body>
+</html>

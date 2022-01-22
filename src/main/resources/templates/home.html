@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+    <head th:include="fragments/header :: header" />
+    <body>
+        <div class="wrapper ">
+            <div class="header" th:include="fragments/menu :: menu" />
+
+            <div class="main-panel" style="height: 100vh;">
+                <!-- Navbar -->
+                <div th:include="fragments/nav :: nav" />
+                <!-- End Navbar -->
+                <div class="content">
+
+
+                    <div th:if="${#lists.isEmpty(productSummary.accountBalanceResponses)}" >
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="card-title"> My Accounts</h4>
+                                </div>
+                                <div class="card-body">
+
+                                    <div class="text-center">
+                                        <p>Here you can see the details of one or more accounts held by you at one or more different banks. You currently have no accounts added.</p>
+
+                                        <div class="text-center">
+                                            <a class="btn btn-primary btn-lg" th:href="@{/add-bank-account-page}" role="button">Add account</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div th:if="${not #lists.isEmpty(productSummary.accountBalanceResponses)}">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-6 col-sm-6">
+                                <div class="card card-stats">
+                                    <div class="card-body ">
+                                        <div class="row">
+                                            <div class="col-5 col-md-4">
+                                                <div class="icon-big text-center icon-warning">
+                                                    <i class="nc-icon nc-vector text-danger"></i>
+                                                </div>
+                                            </div>
+                                            <div class="col-7 col-md-8">
+                                                <div class="numbers">
+                                                    <p class="card-category">Aggregated accounts</p>
+                                                    <p class="card-title"> <span th:remove="tag" th:text="${#lists.size(productSummary.accountBalanceResponses)}"></span><p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer ">
+                                        <hr>
+                                        <div class="stats">
+                                            <i class="fa fa-refresh"></i>
+                                            Update Now
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-sm-6">
+                                <div class="card card-stats">
+                                    <div class="card-body ">
+                                        <div class="row">
+                                            <div class="col-5 col-md-4">
+                                                <div class="icon-big text-center icon-warning">
+                                                    <i class="nc-icon nc-money-coins text-success"></i>
+                                                </div>
+                                            </div>
+                                            <div class="col-7 col-md-8">
+                                                <div class="numbers">
+                                                    <p class="card-category">Total balance</p>
+                                                    <p class="card-title">RON <span th:remove="tag" th:text="${productSummary?.totalBalance}"></span></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer ">
+                                        <hr>
+                                        <div class="stats">
+                                            <i class="fa fa-calendar-o"></i>
+                                            Last day
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-sm-6">
+                                <div class="card card-stats">
+                                    <div class="card-body ">
+                                        <div class="row">
+                                            <div class="col-5 col-md-4">
+                                                <div class="icon-big text-center icon-warning">
+                                                    <i class="nc-icon nc-calendar-60 text-danger"></i>
+                                                </div>
+                                            </div>
+                                            <div class="col-7 col-md-8">
+                                                <div class="numbers">
+                                                    <p class="card-category">Spend this month</p>
+                                                    <p class="card-title">RON <span th:remove="tag" th:text="${productSummary?.totalSpendThisMonth}"></span><p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer ">
+                                        <hr>
+                                        <div class="stats">
+                                            <i class="fa fa-clock-o"></i>
+                                            In the last hour
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-sm-6">
+                                <div class="card card-stats">
+                                    <div class="card-body ">
+                                        <div class="row">
+                                            <div class="col-5 col-md-4">
+                                                <div class="icon-big text-center icon-warning">
+                                                    <i class="nc-icon nc-chart-bar-32 text-primary"></i>
+                                                </div>
+                                            </div>
+                                            <div class="col-7 col-md-8">
+                                                <div class="numbers">
+                                                    <p class="card-category">Average spend per month</p>
+                                                    <p class="card-title">RON <span th:remove="tag" th:text="${productSummary?.averageMonthlySpending}"></span><p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer ">
+                                        <hr>
+                                        <div class="stats">
+                                            <i class="fa fa-refresh"></i>
+                                            Update now
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="card ">
+                                    <div class="card-header ">
+                                        <h5 class="card-title">Spending brakdown</h5>
+                                        <p class="card-category">Last Campaign Performance</p>
+                                    </div>
+                                    <div class="card-body ">
+                                        <canvas id="chartEmail"></canvas>
+                                    </div>
+                                    <div class="card-footer ">
+                                        <div class="legend">
+                                            <i class="fa fa-circle text-primary"></i> Opened
+                                            <i class="fa fa-circle text-warning"></i> Read
+                                            <i class="fa fa-circle text-danger"></i> Deleted
+                                            <i class="fa fa-circle text-gray"></i> Unopened
+                                        </div>
+                                        <hr>
+                                        <div class="stats">
+                                            <i class="fa fa-calendar"></i> Number of emails sent
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card card-chart">
+                                    <div class="card-header">
+                                        <h5 class="card-title">Monthly spending evolution</h5>
+                                        <p class="card-category">Line Chart with Points</p>
+                                    </div>
+                                    <div class="card-body">
+                                        <canvas id="speedChart" width="400" height="100"></canvas>
+                                    </div>
+                                    <div class="card-footer">
+                                        <div class="chart-legend">
+                                            <i class="fa fa-circle text-warning"></i> BMW 5 Series
+                                        </div>
+                                        <hr />
+                                        <div class="card-stats">
+                                            <i class="fa fa-check"></i> Data information certified
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div th:include="fragments/footer :: footer" />
+            </div>
+        </div>
+        <footer>
+            <div th:include="fragments/scripts :: general" />
+        </footer>
+
+        <script src="/static/assets/demo/demo.js"></script>
+        <script>
+    $(document).ready(function() {
+
+
+      var monthsJson = "[[${months}]]";
+      var fixedMonthsJson = monthsJson.replace(/&quot;/g, '\"')
+      var monthsJsonObject = JSON.parse(fixedMonthsJson);
+
+
+      var amountsJson = "[[${amounts}]]";
+      var fixeAmountsJson = amountsJson.replace(/&quot;/g, '\"')
+      var fixeAmountsObject = JSON.parse(fixeAmountsJson);
+
+
+
+
+      demo.initChartsPages(monthsJsonObject, fixeAmountsObject);
+    });
+  </script>
+    </body>
+</html>

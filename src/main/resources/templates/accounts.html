@@ -1,0 +1,75 @@
+
+
+
+
+
+<!doctype html>
+<html lang="en">
+<head th:include="fragments/header :: header" />
+<body>
+<div class="wrapper ">
+    <div class="header" th:include="fragments/menu :: menu" />
+
+    <div class="main-panel" style="height: 100vh;">
+        <!-- Navbar -->
+        <div th:include="fragments/nav :: nav" />
+        <!-- End Navbar -->
+        <div class="content">
+            <div class="row">
+                <div class="col-md-12">
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title"> My Accounts</h4>
+                        </div>
+                        <div class="card-body">
+
+                            <div th:if="${#lists.isEmpty(accountBalanceResponseList)}" class="text-center">
+                                <p>Here you can see the details of one or more accounts held by you at one or more different banks. You currently have no accounts added.</p>
+
+                                <div class="text-center">
+                                    <a class="btn btn-primary btn-lg" th:href="@{/add-bank-account-page}" role="button">Add account</a>
+                                </div>
+
+                            </div>
+
+                            <div th:if="${not #lists.isEmpty(accountBalanceResponseList)}">
+
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead class=" text-primary">
+                                        <tr>
+                                            <th>Owner Name</th>
+                                            <th>Iban</th>
+                                            <th>Type</th>
+                                            <th>Currency</th>
+                                            <th>Amount</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr th:each="account : ${accountBalanceResponseList}">
+                                            <td><span th:remove="tag" th:text="${account?.ownerName}">Name</span></td>
+                                            <td><span th:remove="tag" th:text="${account?.iban}">Iban</span></td>
+                                            <td><span th:remove="tag" th:text="${account?.product}">Type</span></td>
+                                            <td><span th:remove="tag" th:text="${account?.currency}">Currency</span></td>
+                                            <td><span th:remove="tag" th:text="${account?.amount}">Amout</span></td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div th:include="fragments/footer :: footer" />
+    </div>
+</div>
+<footer>
+    <div th:include="fragments/scripts :: general" />
+</footer>z
+</body>
+
+</html>
+
