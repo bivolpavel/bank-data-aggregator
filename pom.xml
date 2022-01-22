@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.4.2</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>com.paj.psd2.aggregator</groupId>
+	<artifactId>Banking-data-aggregator</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>Banking-data-aggregator</name>
+	<description>Demo project for Spring Boot</description>
+	<properties>
+		<java.version>11</java.version>
+		<webjars.bootstrap.version>3.3.7-1</webjars.bootstrap.version>
+		<webjars.bootswatch.version>3.3.7</webjars.bootswatch.version>
+		<webjars.fontAwesome.version>4.7.0</webjars.fontAwesome.version>
+		<webjars.html5shiv.version>3.7.3-1</webjars.html5shiv.version>
+		<webjars.jquery.version>3.3.1-1</webjars.jquery.version>
+		<webjars.locator.version>0.36</webjars.locator.version>
+		<springfox-swagger.version>2.6.1</springfox-swagger.version>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-mongodb</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>net.danlucian.psd2.ing</groupId>
+			<artifactId>oauth2-sdk</artifactId>
+			<version>0.0.2-SNAPSHOT</version>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.xml.bind</groupId>
+			<artifactId>jaxb-api</artifactId>
+			<version>2.3.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
+
+
+
+		<dependency>
+			<groupId>org.thymeleaf.extras</groupId>
+			<artifactId>thymeleaf-extras-springsecurity5</artifactId>
+		</dependency>
+		<!-- ============================================== -->
+		<!-- ================ WEBJARS ===================== -->
+		<!-- ============================================== -->
+		<dependency>
+			<!-- Bootstrap -->
+			<groupId>org.webjars</groupId>
+			<artifactId>bootstrap</artifactId>
+			<version>${webjars.bootstrap.version}</version>
+		</dependency>
+		<dependency>
+			<!-- Bootswatch Readable -->
+			<groupId>org.webjars</groupId>
+			<artifactId>bootswatch-readable</artifactId>
+			<version>${webjars.bootswatch.version}</version>
+		</dependency>
+		<dependency>
+			<!-- Font Awesome -->
+			<groupId>org.webjars</groupId>
+			<artifactId>font-awesome</artifactId>
+			<version>${webjars.fontAwesome.version}</version>
+		</dependency>
+		<dependency>
+			<!-- HTML5 Shiv -->
+			<groupId>org.webjars</groupId>
+			<artifactId>html5shiv</artifactId>
+			<version>${webjars.html5shiv.version}</version>
+		</dependency>
+		<dependency>
+			<!-- JQuery -->
+			<groupId>org.webjars</groupId>
+			<artifactId>jquery</artifactId>
+			<version>${webjars.jquery.version}</version>
+		</dependency>
+		<dependency>
+			<!-- Webjars Locator -->
+			<groupId>org.webjars</groupId>
+			<artifactId>webjars-locator</artifactId>
+			<version>${webjars.locator.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.mapstruct</groupId>
+			<artifactId>mapstruct</artifactId>
+			<version>1.4.1.Final</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.mapstruct/mapstruct-jdk8 -->
+		<dependency>
+			<groupId>org.mapstruct</groupId>
+			<artifactId>mapstruct-jdk8</artifactId>
+			<version>1.4.1.Final</version>
+		</dependency>
+
+
+		<!-- https://mvnrepository.com/artifact/junit/junit -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+			<scope>test</scope>
+		</dependency>
+
+
+
+		<!-- https://mvnrepository.com/artifact/io.swagger.core.v3/swagger-annotations -->
+		<dependency>
+			<groupId>io.swagger.core.v3</groupId>
+			<artifactId>swagger-annotations</artifactId>
+			<version>2.1.6</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+		</dependency>
+
+		<dependency>
+			<groupId>io.jsonwebtoken</groupId>
+			<artifactId>jjwt</artifactId>
+			<version>0.9.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.glassfish.jaxb</groupId>
+			<artifactId>jaxb-runtime</artifactId>
+			<version>2.4.0-b180830.0438</version>
+		</dependency>
+
+		<dependency>
+			<groupId>dev.samstevens.totp</groupId>
+			<artifactId>totp</artifactId>
+			<version>1.7</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.hibernate.validator</groupId>
+			<artifactId>hibernate-validator</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+			<version>20190722</version>
+		</dependency>
+
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.5.1</version>
+				<configuration>
+					<source>9</source>
+					<target>9</target>
+					<annotationProcessorPaths>
+						<path>
+							<groupId>org.mapstruct</groupId>
+							<artifactId>mapstruct-processor</artifactId>
+							<version>1.4.1.Final</version>
+						</path>
+					</annotationProcessorPaths>
+					<compilerArgs>
+						<compilerArg>
+							-Amapstruct.unmappedTargetPolicy=IGNORE
+						</compilerArg>
+					</compilerArgs>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<profiles>
+
+
+		<profile>
+			<id>generate-accounts-api-client</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>io.swagger.codegen.v3</groupId>
+						<artifactId>swagger-codegen-maven-plugin</artifactId>
+						<version>3.0.8</version>
+						<executions>
+							<execution>
+								<goals>
+									<goal>generate</goal>
+								</goals>
+								<id>generate-sberbank-subscription-client</id>
+								<configuration>
+									<inputSpec>${project.basedir}/src/main/resources/specification/Account-Information-API-2.5.0.json</inputSpec>
+									<language>java</language>
+									<library>resttemplate</library>
+									<configOptions>
+										<interfaceOnly>true</interfaceOnly>
+										<java8>true</java8>
+										<dateLibrary>java8</dateLibrary>
+										<hideGenerationTimestamp>true</hideGenerationTimestamp>
+										<!--                                <serializableModel>true</serializableModel>-->
+									</configOptions>
+									<generateModelDocumentation>false</generateModelDocumentation>
+									<addCompileSourceRoot>true</addCompileSourceRoot>
+									<output>${project.basedir}</output>
+									<modelPackage>com.paj.psd2.aggregator.client.generated.model</modelPackage>
+									<apiPackage>com.paj.psd2.aggregator.client.generated.api</apiPackage>
+									<generateApis>true</generateApis>
+									<generateApiTests>false</generateApiTests>
+									<generateModelTests>false</generateModelTests>
+									<generateApiDocumentation>false</generateApiDocumentation>
+									<generateSupportingFiles>true</generateSupportingFiles>
+									<languageSpecificPrimitives>true</languageSpecificPrimitives>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+</project>
